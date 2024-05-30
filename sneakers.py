@@ -56,14 +56,14 @@ async def get_and_send_sneaker_releases(ctx):
             embed.add_field(name="Size Run", value=sneaker["size_run"], inline=True)
             embed.add_field(name="Color", value=sneaker["color"], inline=False)
             embed.add_field(name="Style Code", value=sneaker["style_code"], inline=True)
-            embed.add_field(name="Region", value=sneaker["region"], inline=False)
+            embed.add_field(name="Region", value=sneaker["region"], inline=True)
 
             await ctx.channel.send(embed=embed)
 
 @bot.command()
 async def start_releases_monitor(ctx):
     if get_and_send_sneaker_releases.is_running():
-        await ctx.channel.send("It's already running you dumbass")
+        await ctx.channel.send("It's already running good sire")
         return
     await ctx.channel.send("Started.")
     get_and_send_sneaker_releases.start(ctx)
